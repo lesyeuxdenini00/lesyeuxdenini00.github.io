@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
+    <title>hi baby</title>
+    <link rel="icon" href="louise.png"/>
+    <link rel="stylesheet" href="cybsstyle.css">
+</head>
+<body style="font-family: 'Comic Neue', sans-serif;" class="relative">
+    <audio id="background-audio">
+        <source src="Fade Into You.mp3" type="audio/mpeg">
+        <source src="Fade Into You.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>  
+    
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="indexpola.html">For Louise </a></li>
+            <li><a href="indexluwi.html">Louis</a></li>
+        </ul>
+    </nav>
+
+    <!-- MUSIC PLAYER -->
+    <div class="fixed left-4 bottom-4 z-10">
+        <div class="music-container relative bg-neutral-100 py-3 px-3 border-2 z-10 rounded-md border-black flex items-center">
+            <button class="toggle-player bg-neutral-100 border-2 border-black" aria-label="Toggle music player">
+                <img class="w-full" src="close.svg" alt="Close Player">
+            </button>
+            <div class="avatar absolute w-14">
+                <img class="w-full border-2 bg-white border-black rounded-md" src="Albumcover.jpg" alt="Album Cover">
+            </div>
+            <div class="player">
+                <div class="sound-bars-lottie">
+                    <div class="sound-bars"></div>
+                </div>
+                <div class="track-info -space-y-1">
+                    <div class="trackname">Fade Into You</div>
+                    <div class="trackartist">Mazzy Star</div>
+                </div>
+                <div class="track-nav">
+                    <button class="prev-track" aria-label="Previous Track">
+                        <img class="w-7" src="backplayer.svg" alt="Previous">
+                    </button>
+                    <button class="playpause-track" aria-label="Play/Pause">
+                        <img class="w-8" src="play.svg" alt="Play">
+                    </button>
+                    <button class="next-track" aria-label="Next Track">
+                        <img class="w-7" style="transform: rotate(180deg);" src="backplayer.svg" alt="Next">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    let currentTrack = document.createElement("audio");
+    currentTrack.src = "Fade Into You.mp3"; // Your audio file
+    currentTrack.volume = 0.5; // Set initial volume
+
+    // Get the volume slider
+    let volumeSlider = document.getElementById('volume-slider');
+
+    // Update volume when the slider changes
+    volumeSlider.addEventListener('input', (event) => {
+        currentTrack.volume = event.target.value; // Set the volume based on slider value
+    });
+
+    // Add play/pause functionality
+    document.querySelector('.playpause-track').addEventListener('click', () => {
+        if (currentTrack.paused) {
+            currentTrack.play();
+        } else {
+            currentTrack.pause();
+        }
+    });
+</script>
+    <!-- BACKGROUND -->
+    <div class="background">
+        <div class="one">
+            <div class="container">
+                <div class="envelope-wrapper">
+                    <div class="envelope">
+                        <div class="letter" style="opacity: 0;">
+                            <div class="text">
+                                <strong style="font-size: 1rem;">To my prettiest, Cybelle.</strong>
+                                <p style="text-indent: 10px;">
+                                    Happy happy happy birthday to the prettiest, frikiest, the best, supportive, smart, and loving girlfriend, MY GIRLFRIEND! I know ayaw mo nagcecelebrate ng birthday pero I’d love to hear you share about what happened on your special day sa call time natin. I wish the world would be kinder to you because u deserve the best!! I’m always here for u—on your good days, especially on your bad days. </p>
+   <p></p>
+                                    <p> A pinky promise to never stop loving u and never give up on us, no matter how hard it gets. I’m so grateful to have u as my person and I am proud of everything u do. I will always be your kachismisan and yapping buddy, and I would do EVERYTHING to be with u and to see you. Here’s to today, tomorrow, and always. Cant wait to see you soon, my love. </p> <strong style="font-size: 1rem;"> I love you in every kind of way!! </strong>
+                                <div class="pana">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="heart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <div class="w-44 flex justify-center py-5 gap-3">
+            <img class="w-40" src="snoop5.png" alt="snoopy" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.querySelector('.envelope-wrapper');
+        const audioElement = document.getElementById('background-audio');
+        const playPauseButton = document.querySelector('.playpause-track img');
+
+        envelope.addEventListener('click', () => {
+            envelope.classList.toggle('flap');
+
+            const letter = envelope.querySelector('.letter');
+            letter.style.opacity = envelope.classList.contains('flap') ? 1 : 0;
+        });
+
+        document.querySelector('.playpause-track').addEventListener('click', () => {
+            if (audioElement.paused) {
+                audioElement.play();
+                playPauseButton.src = 'pause.svg'; // Change to pause icon
+            } else {
+                audioElement.pause();
+                playPauseButton.src = 'play.svg'; // Change to play icon
+            }
+        });
+    </script>
+    
+    <script src="app.js"></script> 
+</body>
+</html>

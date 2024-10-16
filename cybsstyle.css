@@ -1,0 +1,313 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  background-color: #333; /* Dark background */
+  overflow: hidden; /* Clear floats */
+}
+
+.nav-list {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Horizontal layout */
+}
+
+.nav-list li {
+  flex: 1; /* Evenly space items */
+}
+
+.nav-list a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; /* Remove underline */
+}
+
+.nav-list a:hover {
+  background-color: #000000; /* Darker gray on hover */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root{
+    --primary: #fff;
+    --bg-envelope-color: #f5edd1;
+    --envelope-tab: #6A9AB0;
+    --envelope-cover: #3A6D8C;
+    --shadow-color: hwb(0 35% 65%);
+    --txt-color: #000000;
+    --heart-color: #00254b;
+  }
+  .one{
+    background-color: #cccccc;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .background{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+  }
+  .one{
+    width: 100%;
+    height: 100%;
+  }
+  .background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .container {
+    height: 100%;
+    width: 100%;
+    top: 1.5rem;
+    display: grid;
+    position: absolute;
+    place-items: center;
+  }
+  .container > .envelope-wrapper {
+    background: var(--bg-envelope-color);
+    box-shadow: 0 0 40px var(--shadow-color);
+  }
+  .envelope-wrapper > .envelope {
+    position: relative;
+    width: 600px;
+    height: 340px;
+    box-shadow: 0 20px 50px var(--shadow-color); /* Adjusted shadow size and spread */
+    transition: box-shadow 5s ease; /* Optional transition for shadow */
+  }
+  .envelope-wrapper > .envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    border-top: 200px solid var(--envelope-tab);
+    border-right: 300px solid transparent;
+    border-left: 300px solid transparent;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0.7s;
+  }
+  .envelope-wrapper > .envelope::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    width: 0px;
+    height: 0px;
+    border-top: 200px solid transparent;
+    border-right: 300px solid var(--envelope-cover);
+    border-bottom: 200px solid var(--envelope-cover);
+    border-left: 300px solid var(--envelope-cover);
+  }
+  .envelope > .letter {
+    position: absolute;
+    right: 10%;             
+    bottom: 0;             /* Align to the bottom edge of the envelope */
+    width: 80%;           /* Full width of the envelope */
+    height: 98%;          /* Full height of the envelope */
+    background: var(--primary);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 5px var(--shadow-color);
+    padding: 15px 15px 50px 15px;
+  }
+  
+  .envelope > .letter > .text {
+    font-family: 'Comic Neue';
+    color: var(--txt-color);
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .heart {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: #001F3F;
+    z-index: 4;
+    transform: translate(-50%, -20%) rotate(45deg);
+    transition: transform 0.5s ease-in-out 1s;
+    box-shadow: 0 1px 6px var(--shadow-color);
+    cursor: pointer;
+  }
+  .heart:before, 
+  .heart:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #001F3F;
+    border-radius: 50%;
+  }
+  .heart:before {
+    top: -15.5px;
+  }
+  .heart:after {
+    right: 15.5px;
+  }
+  .flap > .envelope:before {
+    transform: rotateX(180deg);
+    z-index: 0;
+  }
+  .flap > .envelope > .letter {
+    bottom: 140px;
+    transform: scale(1.5);
+    transition-delay: 1s;
+  }
+  .flap > .heart {
+    transform: rotate(90deg);
+    transition-delay: 0.5s;
+  }
+  .love{
+    text-align: center;
+    font-weight: bold;
+  }
+  }
+  .pana{
+    width: 100%;
+    margin-top: .3rem;
+  }
+  .pana img{
+    width: 1.5rem;
+    margin: auto;
+  }
+  
+  #window #gif img{
+    opacity: 0;
+    transition: opacity .3s, width .3s;
+    width: 5rem;
+  }
+  #gif{
+    pointer-events: none;
+  }
+  
+  #window:hover #gif img{
+    opacity: 1;
+    width: 11rem;
+  }
+  
+  .music-container{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 450px;
+    z-index: 1;
+    transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+  .player{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+  }
+  
+  .track-info{
+    position: absolute;
+    top: 0;
+    left: -.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transition: all .25s ease;
+  }
+  
+  .trackname{
+    font-size: 1.5rem;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  .trackartist{
+    font-size: .8rem;
+    pointer-events: none;
+  }
+  .track-nav{
+    gap: .2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all .25s ease;
+  }
+  
+  .music-container.hide {
+    width: 140px;
+  }
+  
+  .music-container.hide .track-info,
+  .music-container.hide .track-nav {
+    transition: all 0s ease;
+    opacity: 0;
+  }
+  
+  .toggle-player{
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 2rem;
+    z-index: 2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+  
+  .sound-bars-lottie{
+    position: absolute;
+    top: 1.1rem;
+    left: 4.5rem;
+  }
+  .sound-bars{
+    width: 100%;
+    width: 60px;
+    height: 60px;
+  }
+  .prev-track, .playpause-track, .next-track{
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 100%;
+    padding: .3rem;
+  }
+  
+  .prev-track:hover, .playpause-track:hover, .next-track:hover{
+    background-color: rgb(190, 190, 190);
+    transition-duration: .5s;
+  }
+  
+  @keyframes slideUp {
+      from {
+          transform: translateY(20%);
+          opacity: 0;
+      }
+      to {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+  
+  .envelope-wrapper.flap .letter {
+      animation: slideUp 0s ease forwards;
+      opacity: 1;
+  }
+  
